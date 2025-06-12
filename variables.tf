@@ -14,9 +14,9 @@ variable "mfa_key" {
 }
 
 variable megaport_product_uid {
-  default = "7d6c3458-65e7-4e3c-b364-127a8bb838c5"
+  default = ""
 }
 
 variable virtual_circuit_id {
-  default = "ocid1.virtualcircuit.oc1.ap-melbourne-1.aaaaaaaatb5ptxnmhhgwbdrfe7vz744v6ef4cu5jqjqno7j5lqiy5ahpzpwa"
+  default = ""
 }
