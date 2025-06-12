@@ -28,17 +28,8 @@ resource "megaport_vxc" "oci_vxc" {
         #bgp_connection = {
          #                   peer_asn           = 31898
           #                  local_ip_address   = "10.10.101.33/30"
-           #                 peer_ip_address    = "10.10.101.34/30"
-                            #password           = "notARealPassword"
-                            #shutdown           = false
-                            #med_in             = 100
-                            #med_out            = 100
-                            #bfd_enabled        = true
-                            #export_policy      = "deny"
-                            #permit_export_to   = ["10.0.1.2"]
-                            #import_permit_list = "Prefix filter list 1"
+           #                 peer_ip_address    = "10.10.101.34/30s
                     }
-      #owner_account = "123456789012"
     #}
   }
 }
