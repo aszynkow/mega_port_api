@@ -1,10 +1,17 @@
+resource "megaport_mcr" "mcr_mel" {
+  product_name         = "mcr_mel"
+  port_speed           = 2500
+  location_id          = data.megaport_location.nextdc_mel.id
+  contract_term_months = 12
+}
+
 resource "megaport_vxc" "oci_vxc" {
   product_name         = "Megaport VXC Example - OCI"
   rate_limit           = 1000
   contract_term_months = 12
 
   a_end = {
-    requested_product_uid = var.megaport_product_uid
+    requested_product_uid = megaport_mcr.mcr_mel.product_uid
     ordered_vlan          = 0
   }
 
@@ -26,10 +33,10 @@ resource "megaport_vxc" "oci_vxc" {
       ip_addresses     = ["10.10.101.33/30"]
 
         #bgp_connection = {
-         #                   peer_asn           = 31898
-          #                  local_ip_address   = "10.10.101.33/30"
-           #                 peer_ip_address    = "10.10.101.34/30s
-                    }
-    #}
+        #                   peer_asn           = 31898
+        #                  local_ip_address   = "10.10.101.33/30"
+        #                 peer_ip_address    = "10.10.101.34/30s"
+        #            }
+    }
   }
 }
