@@ -10,11 +10,19 @@ data megaport_location nextdc_mel{
  name    = "NextDC M1"
 }
 
-data "megaport_partner" "primary_oci_port_mel" {
+data "megaport_partner" "secondary_oci_port_red_mel" {
   connect_type   = "ORACLE"
   company_name   = "Oracle"
   product_name   = "OCI (ap-melbourne-1) (BMC)"
   diversity_zone = "red"
+  location_id    = data.megaport_location.equinix_mel.id
+}
+
+data "megaport_partner" "primary_oci_port_blue_mel" {
+  connect_type   = "ORACLE"
+  company_name   = "Oracle"
+  product_name   = "OCI (ap-melbourne-1) (BMC)"
+  diversity_zone = "blue"
   location_id    = data.megaport_location.equinix_mel.id
 }
 
@@ -23,5 +31,13 @@ data "megaport_partner" "primary_oci_port_syd" {
   company_name   = "Oracle"
   product_name   = "OCI (ap-sydney-1) (BMC)"
   diversity_zone = "blue"
+  location_id    = data.megaport_location.equinix_sydney.id
+}
+
+data "megaport_partner" "secondary_oci_port_syd" {
+  connect_type   = "ORACLE"
+  company_name   = "Oracle"
+  product_name   = "OCI (ap-sydney-1) (BMC)"
+  diversity_zone = "red"
   location_id    = data.megaport_location.equinix_sydney.id
 }

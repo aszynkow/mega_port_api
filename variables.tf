@@ -17,6 +17,10 @@ variable megaport_product_uid {
   default = ""
 }
 
-variable virtual_circuit_id {
+variable virtual_circuit_id_f1_mel {
+  default = ""
+}
+
+variable virtual_circuit_id_f1_syd {
   default = ""
 }
