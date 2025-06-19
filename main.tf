@@ -15,6 +15,28 @@ resource "megaport_vxc" "oci_vxc" {
     ordered_vlan          = 0
   }
 
+  a_end_partner_config = {
+
+    partner      = "vrouter"
+
+    vrouter_config = {
+
+      interfaces = [
+        {
+          ip_addresses    = ["10.10.101.33/30"]
+          bgp_connections = [
+          {
+            peer_asn         = 31898
+            local_ip_address = "10.10.101.33"
+            peer_ip_address  = "10.10.101.34"
+             } 
+                            ]
+      } 
+                  ]
+
+      }
+  }
+
   b_end = {
     requested_product_uid = data.megaport_partner.primary_oci_port_mel.product_uid
   }
@@ -34,9 +56,9 @@ resource "megaport_vxc" "oci_vxc" {
 
         #bgp_connection = {
         #                   peer_asn           = 31898
-        #                  local_ip_address   = "10.10.101.33/30"
-        #                 peer_ip_address    = "10.10.101.34/30s"
-        #            }
+         #                 local_ip_address   = "10.10.101.33/30"
+          #               peer_ip_address    = "10.10.101.34/30s"
+           #         }
     }
   }
 }
