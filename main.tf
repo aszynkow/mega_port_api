@@ -57,7 +57,7 @@ resource "megaport_vxc" "oci_vxc" {
         #bgp_connection = {
         #                   peer_asn           = 31898
          #                 local_ip_address   = "10.10.101.33/30"
-          #               peer_ip_address    = "10.10.101.34/30s"
+          #               peer_ip_address    = "10.10.101.34/30"
            #         }
     }
   }
